@@ -1,12 +1,12 @@
 import pygame
 
 # Ancho y alto teórico
-ancho_teorico = 500
-alto_teorico = 500
+ancho_teorico = 600
+alto_teorico = 600
 
 # Ancho y alto real
-ancho_real = 100
-alto_real = 100
+ancho_real = 50
+alto_real = 50
 
 # Relation (ratio) de aspecto entre el real y el teórico
 delta_x = int(ancho_teorico/ancho_real)
@@ -56,7 +56,7 @@ while running:
     event = pygame.event.poll()
     if event.type == pygame.QUIT:
         running = False
-    #screen.fill(BLACK)
+    screen.fill(BLACK)
     pygame.draw.rect(screen, BLUE, (200, 150, 100, 50))
     pygame.draw.aaline(screen, (0, 100, 255), (0, 0), (ancho_real-1, alto_real-1))
     pygame.draw.aaline(screen, (50, 180, 40), (ancho_real-1, 0), (0, alto_real-1))
@@ -67,4 +67,4 @@ while running:
     pixel(screen, punto2[0], punto2[1], WHITE)
     transformado = transformar(punto1, 1.3, 2.4)
     pixel(screen, transformado[0], transformado[1], ROJO)
-    #pygame.display.flip()
+    pygame.display.flip()
