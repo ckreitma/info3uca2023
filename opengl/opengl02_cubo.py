@@ -2,7 +2,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
-altura,ancho = 800,800
+altura, ancho = 800, 800
 vertices = (
     (1, -1, -1),
     (1, 1, -1),
@@ -47,10 +47,10 @@ def Cube():
     # Inicializar la matriz.
     glLoadIdentity()
 
-    glTranslatef(0.0, 0.0, -5.0)
+    glTranslatef(0.0, 0.0, -10.1)
 
     # Ángulo,
-    glRotatef(45, 1, 0.3, 0.1)
+    glRotatef(3, 1, 0.3, 0.1)
     glBegin(GL_LINES)
     for edge in edges:
         for vertex in edge:

@@ -2,7 +2,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
-altura,ancho = 800,800
+altura, ancho = 800, 800
 vertices = (
     (1, -1, -1),
     (1, 1, -1),
@@ -29,6 +29,7 @@ edges = (
     (5, 7)
 )
 
+
 def inicializar():
     # Borrar la pantalla
     glClearColor(1, 1, 1, 1)
@@ -50,24 +51,26 @@ def inicializar():
     glTranslatef(0.0, 0.0, -5.0)
 
     # Ángulo,
-    glRotatef(10, 0.2, 0.2, 0)
+    glRotatef(20, 1, 0, 0)
+
 
 def ejes():
     # Eje x
     glBegin(GL_LINES)
     glColor3f(1, 0, 0)
-    glVertex3f(0,0,0)
-    glVertex3f(1,0,0)
+    glVertex3f(0, 0, 0)
+    glVertex3f(1, 0, 0)
 
     glColor3f(0, 1, 0)
-    glVertex3f(0,0,0)
-    glVertex3f(0,1,0)
+    glVertex3f(0, 0, 0)
+    glVertex3f(0, 1, 0)
 
     glColor3f(0, 0, 1)
-    glVertex3f(0,0,0)
-    glVertex3f(0,0,1)
+    glVertex3f(0, 0, 0)
+    glVertex3f(0, 0, 1)
 
     glEnd()
+
 
 def cubo():
     glBegin(GL_LINES)
@@ -83,6 +86,7 @@ def actualizar():
     ejes()
     cubo()
     glFlush()
+
 
 def main():
     glutInit(sys.argv)

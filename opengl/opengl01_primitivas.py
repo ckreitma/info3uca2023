@@ -3,6 +3,7 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
+
 w, h = 500, 500
 
 
@@ -61,7 +62,7 @@ glutInit()
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(500, 500)
 glutInitWindowPosition(0, 0)
-glutCreateWindow("Primitivas Cuadrilátero y Triángulos")
+glutCreateWindow("Primitivas")
 glutDisplayFunc(showScreen)
 glutIdleFunc(showScreen)
 glutMainLoop()
