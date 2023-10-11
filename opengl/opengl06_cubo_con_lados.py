@@ -17,6 +17,7 @@ def cara(vertices, color):
 
 def display():
     global ojox, ojoy, ojoz
+    glEnable(GL_DEPTH_TEST)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     # Selecciona la matriz de proyección
     glMatrixMode(GL_PROJECTION)
@@ -77,10 +78,7 @@ def Cube():
         (3, 0),
     )
 
-    ejes()
-
-    # Cara trasera #gris
-    cara(vertices, (0.4, 0.4, 0.4))
+    # ejes()
 
     # Cara izquierda #rosada
     glPushMatrix()
@@ -114,6 +112,9 @@ def Cube():
     cara(vertices, (0.3, 0.1, 0.3))
     glPopMatrix()
 
+    # Cara trasera #gris
+    cara(vertices, (0.4, 0.4, 0.4))
+
     glFlush()
 
 
@@ -126,13 +127,11 @@ def buttons(key, x, y):
 
 def main():
     glutInit(sys.argv)
-    # glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
-    glutInitWindowSize(altura, ancho)
-    # Borrar la pantalla
-    glEnable(GL_DEPTH_TEST)
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)
     glDepthFunc(GL_LESS)
-
+    glutInitWindowSize(altura, ancho)
     glutInitWindowPosition(0, 0)
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH)
     glutCreateWindow("Cubo 3D con rotación de caras")
     glutDisplayFunc(display)
     glutKeyboardFunc(buttons)
