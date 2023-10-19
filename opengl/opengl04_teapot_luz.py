@@ -19,7 +19,7 @@ def main():
     glEnable(GL_DEPTH_TEST)
     glEnable(GL_LIGHTING)
     lightZeroPosition = [-20., 2., -2., 1.]
-    lightZeroColor = [1.8, 1.0, 0.8, 1.0]  # green tinged
+    lightZeroColor = [0.7, 1., 0., 1.0]  # green tinged
     glLightfv(GL_LIGHT0, GL_POSITION, lightZeroPosition)
     glLightfv(GL_LIGHT0, GL_DIFFUSE, lightZeroColor)
     glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
@@ -41,7 +41,7 @@ def display():
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glPushMatrix()
-    color = [1.0, 0., 0., 1.]
+    color = [1.0, 1., 1., 1.]
     glMaterialfv(GL_FRONT, GL_DIFFUSE, color)
     glRotatef(180, 1, 0, 0)
     glRotatef(-45, 0, 1, 0)
