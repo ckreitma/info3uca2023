@@ -29,8 +29,10 @@ function main() {
     const color = 0xFFFFFF;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
+    const ambiente = new THREE.AmbientLight(0x606060,2)
     light.position.set(1, 2, 4);
     scene.add(light);
+    scene.add(ambiente);
   }
 
   const boxWidth = 1;
